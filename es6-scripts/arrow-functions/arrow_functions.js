@@ -19,7 +19,7 @@ let doubled = numbers.map(function(n) {
 });
 
 console.log(doubled);
-//See map utilization on xpto
+//See map utilization on https://www.youtube.com/watch?v=bCqtb-Z5YGQ
 
 // And now with arrow function \o/
 let doubled = numbers.map((n) => n*2);
