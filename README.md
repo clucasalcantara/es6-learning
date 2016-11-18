@@ -16,3 +16,21 @@ console.log(`${languageName} syntax highlighting`;
 ```
 that corresponds to *JavaScript syntax highlighting* :)
 - - - -
+
+## <b>Chapter Two:<b>
+### Arrow functions
+* The inspiration for arrow functions implementation have origin on CoffeScript
+syntax:
+
+````CoffeScript
+add = (a,b) ->
+    a + b
+
+console.log( add(2,3) );
+````
+
+and the Arrow Function equivalent, thats very useful for functional programming
+````JavaScript
+let add = (a,b) => a + b;
+console.log( add(2,3) );
+````
