@@ -34,3 +34,5 @@ and the Arrow Function equivalent, thats very useful for functional programming
 let add = (a,b) => a + b;
 console.log( add(2,3) );
 ````
+
+###### So, arrow functions are lexically scoped functions with a simplified syntax and because of scope allow us to access parental scope inside forEach, forIn, and others functions easily.
