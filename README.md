@@ -83,4 +83,5 @@ code into es5, or keep es6 depending of your task (That's cool :)
 * Check it out on the gulfile.js (Where the tasks are :) )
 [Go to file]('https://github.com/clucasalcantara/es6-learning/blob/master/gulpfile.js')
 
-* Doubts on gulp and babel installation: [Using es6 with gulp and babel]('https://markgoodyear.com/2015/06/using-es6-with-gulp/')
+* Doubts on gulp and babel installation:
+[Using es6 with gulp and babel]('https://markgoodyear.com/2015/06/using-es6-with-gulp/')
