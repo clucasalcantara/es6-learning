@@ -36,7 +36,7 @@ console.log( add(2,3) );
 ````
 
 ###### So, arrow functions are lexically scoped functions with a simplified syntax and because of scope allow us to access parental scope inside forEach, forIn, and others functions easily.
-
+- - - -
 #### <b>Chapter Three:<b>
 ###### Spread Operators and Rest Parameters
 * The feature for spread operators on javascript helps us to access any numbers of
@@ -60,4 +60,18 @@ let sum = function(...args) {
 };
 
 console.log(sum(2,3,4,5));
+````
+- - - -
+#### <b>Chapter Four:<b>
+###### Destructuring
+* Destructuring is a new feature that allows u to get data from object or array easier
+
+Before ES6:
+````javascript
+var Router = require('react-router').Router;
+````
+
+After ES6:
+````javascript
+import { Router } from 'react-router';
 ````
