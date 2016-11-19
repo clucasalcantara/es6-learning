@@ -102,3 +102,8 @@ beers.reduce((sequence, obj) => {
             .then(res => console.log(res)))
             .catch(err => console.log(err));
 }, Promise.resolve());
+
+// > Budweiser saved success
+// > Heineken saved success
+// > Eisenbahn saved success
+// > Stella Artois saved success
