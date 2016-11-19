@@ -48,29 +48,40 @@ let myPromise2 = new Promise((resolve, reject) => {
     }, 1500);
 });
 
+//Static Methods
+
+// Promise.all(array of promises)
 //The all method, it's how you handle multiple promises
 Promise.all([myPromise, myPromise2])
     .then((data) => {
         console.log(data);
     })
-// This method only works if all promises resolve, if one fails will be on catch
-// block
+    // This method only works if all promises resolve, if one fails will be on catch
+    // block
     .catch((err) => {
         console.log(err);
     });
+
+// Promise.race(array of promises)
+//This race method, it's how you handle multiple promises
+Promise.race([myPromise, myPromise2])
+    // This method only works if first promise resolved 
+    .then((data) => console.log(data))
+    // This method only works if first promise rejected
+    .catch((data) => console.log(data))
 
 
 //Parallelism and sequencing
 
 let beers = [{
-        name: 'Budweiser'
-    }, {
-        name: 'Heineken'
-    }, {
-        name: 'Eisenbahn'
-    }, {
-        name: 'Stella Artois'
-    }]
+    name: 'Budweiser'
+}, {
+    name: 'Heineken'
+}, {
+    name: 'Eisenbahn'
+}, {
+    name: 'Stella Artois'
+}]
 
 //Paralellism
 // Use when you need to perform tasks in parallel and perform an action once the promise is resolved.
@@ -100,7 +111,7 @@ beers.reduce((sequence, obj) => {
                 body: beer
             })
             .then(res => console.log(res)))
-            .catch(err => console.log(err));
+        .catch(err => console.log(err));
 }, Promise.resolve());
 
 // > Budweiser saved success
