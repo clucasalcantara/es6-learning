@@ -58,3 +58,47 @@ Promise.all([myPromise, myPromise2])
     .catch((err) => {
         console.log(err);
     });
+
+
+//Parallelism and sequencing
+
+let beers = [{
+        name: 'Budweiser'
+    }, {
+        name: 'Heineken'
+    }, {
+        name: 'Eisenbahn'
+    }, {
+        name: 'Stella Artois'
+    }]
+
+//Paralellism
+// Use when you need to perform tasks in parallel and perform an action once the promise is resolved.
+
+beers.forEach(beer => {
+    fetch('/save', {
+            method: 'POST',
+            body: beer
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+});
+
+// > Heineken saved success
+// > Eisenbahn saved success
+// > Budweiser saved success
+// > Stella Artois saved success
+
+
+// Sequencing
+// Use when you need to perform sequential tasks or when you need operations to stop in case one fails
+
+beers.reduce((sequence, obj) => {
+    return sequence
+        .then(() => fetch('/save', {
+                method: 'POST',
+                body: beer
+            })
+            .then(res => console.log(res)))
+            .catch(err => console.log(err));
+}, Promise.resolve());
