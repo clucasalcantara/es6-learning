@@ -1,17 +1,22 @@
-//using gulp and babel to transpile your es6 code into es5 and es6 code, depend\
-//ing of your navigator
+//using gulp and babel to transpile your es6 code into es5 and es6 code
 const gulp = require('gulp');
-const babel = require('gulp-babel');
+const babelify = require('babelify');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
 
-//lets create our first task
+//Now lets use browserify and babelify to help us through our module construction
 gulp.task('es6', () => {
-    return gulp.src('src/app.js')
-        .pipe(babel({
+    browserify('src/app.js')
+        .transform('babelify', {
             presets: ['es2015']
-        }))
-        .pipe(gulp.dest('build'))
+        })
+        .bundle()
+        .pipe(source('src/app.js'))
+        .pipe(buffer())
+        .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', () => {
+gulp.task('default', ['es6'], () => {
     gulp.watch('src/app.js', ['es6'])
 });
