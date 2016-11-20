@@ -90,13 +90,14 @@ code into es5, or keep es6 depending of your task (That's cool :)
 * Doubts on gulp and babel installation:
 [Using es6 with gulp and babel]('https://markgoodyear.com/2015/06/using-es6-with-gulp/')
 - - - -
+
 #### <b>Chapter Six:<b>
 ###### Promises and Fetch Api
 
 #### Promises
 * Promises are objects who represents an asynchronous processing, a promise could represents a value available now, on the future, or never.
 
-Promise syntax
+*Promise syntax:*
 ````javascript
 new Promise(/* executor */ (resolve, reject) => { ... });
 ````
