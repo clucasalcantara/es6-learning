@@ -7,7 +7,5 @@ myModule('hot');
 
 // Now you have access to your module functions
 const total = add(2,4);
-console.log(total);
 
 const subtraction = subtract(10,2);
-console.log(subtraction);
